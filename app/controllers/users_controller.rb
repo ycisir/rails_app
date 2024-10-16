@@ -72,6 +72,7 @@ class UsersController < ApplicationController
     # render plain: params[:user]
     
     @user = User.new(user_params)
+    @user.name = @user.fullname
     if @user.save
       redirect_to action: :list_users
     else
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
     
 
     # for new_user
-    params.require(:user).permit(:first_name, :last_name, :age, :city, :gender)
+    params.require(:user).permit(:first_name, :last_name, :age, :city_id, :gender)
   end
 
 
