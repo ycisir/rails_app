@@ -1,0 +1,26 @@
+<h1>New user</h1>
+
+<%= form_tag "create_user" %>
+<%= label_tag 'First name' %><br />
+<%= text_field_tag 'user[first_name]' %><br /><br />
+
+<%= label_tag 'Last name' %><br />
+<%= text_field_tag 'user[last_name]' %><br /><br />
+
+<%= label_tag 'Age' %><br />
+<%= text_field_tag 'user[age]' %><br /><br />
+
+<%= label_tag 'Address line 1' %><br />
+<%= text_field_tag 'user[addressline_1]' %><br /><br />
+
+<%= label_tag 'Address line 2' %><br />
+<%= text_field_tag 'user[addressline_2]' %><br /><br />
+
+<%= label_tag 'City' %><br />
+<%= text_field_tag 'user[city]' %><br /><br />
+
+<%= label_tag 'Zipcode' %><br />
+<%= text_field_tag 'user[zipcode]' %><br /><br />
+
+<%= submit_tag 'Submit' %>
+

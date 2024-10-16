@@ -1,0 +1,21 @@
+<%= render "common_templates/company_name", product: @product %>
+<h1>List users</h1>
+<table style="border: 1px solid;">
+	<th>First name</th>
+	<th>Last name</th>
+	<th>Age</th>
+	<th>City</th>
+	<th>Gender</th>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.first_name %></td>
+		<td><%= user.last_name %></td>
+		<td><%= user.age %></td>
+		<td><%= user.city %></td>
+		<%# <td><%= user.gender %></td>
+		<%# <td><%= gender_string(user.gender) %></td> <%# using helper function %>
+		<td><%= user.gender_string %></td> <%# using model class %>
+	</tr>
+	<% end %>
+</table>
+	

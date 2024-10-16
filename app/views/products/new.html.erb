@@ -1,0 +1,12 @@
+<% content_for :title, "New product" %>
+
+<h1>New product</h1>
+
+<%= render "common_templates/company_name", product: @product %>
+<%= render "form", product: @product %>
+
+<br>
+
+<div>
+  <%= link_to "Back to products", products_path %>
+</div>
