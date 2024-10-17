@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # form helper
   # url helper 
   # text helper
+  # asset tag helper
 
 
 

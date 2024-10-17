@@ -30,8 +30,8 @@
 
 
     <%# same as above but we have route see with --- rails routes command %>
-    <%# users_new_user_path give absolute url %>
-    <%# users_new_user_url give full url %>
+    <%# users_new_user_path give relative url short url %>
+    <%# users_new_user_url give absolute url means full url including domain name %>
      <%= link_to_unless_current 'New user', users_new_user_url %>
     <%= link_to_unless_current 'List user', users_list_users_url %>
 
