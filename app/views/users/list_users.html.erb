@@ -1,22 +1,42 @@
-<%= render "common_templates/company_name", product: @product %>
+<%#= render "common_templates/company_name", product: @product %>
+
+<style type="text/css">
+	table, th, tr, td {
+		border: 1px solid;
+		text-align: left;
+	}
+</style>
+
 <h1>List users</h1>
-<table style="border: 1px solid;">
-	<th>First name</th>
-	<th>Last name</th>
-	<%# <th>Name</th> %>
+<table>
+	<%# <th>First name</th> %>
+	<%# <th>Last name</th> %>
+	<th>Name</th>
 	<th>Age</th>
 	<th>City</th>
 	<th>Gender</th>
 	<% @users.each do |user| %>
 	<tr>
-		<td><%= user.firstname %></td>
-		<td><%= user.lastname %></td>
-		<%# <td><%= user.name %></td>
+		<%# <td><%= user.firstname </td> %>
+		<%# <td>= user.lastname </td> %>
+
+
+
+		<%# <td><%= link_to user.name, action: :show, id: user </td> %>
+		<%# same as above %>
+		<td><%= link_to user.name, show_user_path(id: user) %></td>
+		
+
+
 		<td><%= user.age %></td>
 		<td><%= user.city_name %></td>
+		
+
 		<%# <td><%#= user.city %></td>
 		<%# <td><%= user.gender %></td>
 		<%# <td><%= gender_string(user.gender) %></td> <%# using helper function %>
+		
+
 		<td><%= user.gender_string %></td> <%# using model class %>
 	</tr>
 	<% end %>

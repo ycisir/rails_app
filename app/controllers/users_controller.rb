@@ -1,8 +1,21 @@
 class UsersController < ApplicationController
 
+  # completed 
+  # form helper
+  # url helper 
+  # text helper
+
+
+
+
   # this is method is the action of the above controller  
   def list_users
     @users = User.all
+  end
+
+  def show
+    @user = User.find params[:id]
+    render "show_new_template"
   end
 
 

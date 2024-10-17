@@ -10,8 +10,8 @@
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="#" type="image/png">
+    <link rel="icon" href="#" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -19,6 +19,24 @@
 
   <body>
     <h1>Application layout</h1>
+    <%= current_page?(controller: :users, action: :new_user) %>
+    <%#= link_to 'New user', controller: :users, action: :new_user %>
+    <%#= link_to_if current_page?(controller: :users, action: :new_user), 'List users', controller: :users, action: :list_users %>
+
+
+    <%# url helpers --- shortcut of above code %>
+    <%#= link_to_unless_current 'New user', controller: :users, action: :new_user %>
+    <%#= link_to_unless_current 'List user', controller: :users, action: :list_users %>
+
+
+    <%# same as above but we have route see with --- rails routes command %>
+    <%# users_new_user_path give absolute url %>
+    <%# users_new_user_url give full url %>
+     <%= link_to_unless_current 'New user', users_new_user_url %>
+    <%= link_to_unless_current 'List user', users_list_users_url %>
+
     <%= yield %>
+
+
   </body>
 </html>
