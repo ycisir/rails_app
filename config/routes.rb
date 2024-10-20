@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "users/show_new_template"
   get "users/display_other_template"
   get "users/new_user"
-  post "/users/create_user"
+  post "users/create_user"
   get "users/show/:id", to: "users#show", as: "show_user" # parameterized route
 
 

@@ -1,6 +1,21 @@
 <h1>New user</h1>
 
-<%= form_for :user, url: "create_user" do |f| %>
+<%= form_for :user, url: "create_user", local: true, data: { turbo: false } do |f| %>
+
+
+
+  <div style="color: red;">
+    <% if @user.errors.any? %>
+    <h4><%= pluralize(@user.errors.count, 'error') %> have occured!</h4>
+
+      <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+      </ul>
+
+    <% end %>
+  </div>
 
   <%# here first_name and last_name not in our db but we use it in view bcz of virtual attributes by model class attr_accessor without using form_tag still use form_for  %>
 

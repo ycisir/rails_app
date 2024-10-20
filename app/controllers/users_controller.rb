@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery with: :null_session
 
   # completed 
   # form helper
@@ -90,7 +91,10 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to action: :list_users
     else
-      render action: :new_user
+      respond_to do |format|
+        # format.turbo_stream { render turbo_stream: turbo_stream.replace(@user, partial: 'posts/form', locals: { user: @user }) }
+        format.html { render :new_user }
+      end
     end
 
   end
