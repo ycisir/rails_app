@@ -202,6 +202,15 @@ class User < ApplicationRecord
 
 
 
+	# yaris = toyota.products.build(name: "Yaris", price: 9000, model: "SE")
+	# then yaris.save
+	# important command --- build
+
+	# lc = toyota.products.create(name: "Land Cruiser", price: 19000, model: "SUV")
+
+
+
+
 
 
 
