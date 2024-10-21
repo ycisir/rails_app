@@ -6,7 +6,7 @@
 
   <div style="color: red;">
     <% if @user.errors.any? %>
-    <h4><%= pluralize(@user.errors.count) 'error' %> have occured!</h4>
+    <h4><%= pluralize(@user.errors.count, 'error') %> have occured!</h4>
 
       <ul>
           <% @user.errors.full_messages.each do |message| %>

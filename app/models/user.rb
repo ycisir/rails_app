@@ -36,6 +36,15 @@ class User < ApplicationRecord
 
 
 
+
+
+
+
+
+
+
+
+
 	# ================ these are the active record queries ===============
 
 	# return active record relation
@@ -115,6 +124,15 @@ class User < ApplicationRecord
 
 
 
+
+
+
+
+
+
+
+
+
 	# ================== dynamic finders so below queries will be generated =================
 	# User.find_by_name("Jack Sparrow")
 
@@ -122,6 +140,69 @@ class User < ApplicationRecord
 	# SELECT `users`.* FROM `users` WHERE `users`.`name`
 	
 	# 'Jack Sparrow' AND `users`.`age` = 33
+
+
+
+
+
+
+
+
+
+
+
+	# ============================== associations =======================================
+
+	# relationships
+
+	# user --- comments => one to many
+	# customer --- bank account => one to one
+	# books --- authors => many to many
+
+
+
+
+
+	# ORM --- Object relational mapping (Active record)
+	# model and database table
+
+
+
+
+
+	# association in rails
+
+	# lot of auto generated methods
+	# simple dynamic method for the developer associated objs
+	# clear OOPs
+
+
+	# one --- one relation between 2 rails model -> has_one
+	# one --- many relation between 2 rails model -> has_many
+	# many --- many relation between 2 rails model -> has_and_belongs_many
+	# many --- many relation between 2 rails model -> has_many through:
+	# 1 --- n model relations -> polymorphic associations
+
+	
+
+	# tables in db 
+	# ========================
+	# Manufacturers
+	# Resellers
+	# Products
+
+
+	# Manufacturers --- Products
+	# has_many (one to many)
+
+
+	# Manufacturers --- Resellers
+	# has_and_belongs_many (many to many)
+
+
+
+
+
 
 
 
@@ -136,7 +217,7 @@ class User < ApplicationRecord
 
 
 	# custom validation
-	# validate :check_name_uniqueness
+	validate :check_name_uniqueness
 
 	def check_name_uniqueness
 
