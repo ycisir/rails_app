@@ -202,11 +202,27 @@ class User < ApplicationRecord
 
 
 
+	# has_many --- collection methods
 	# yaris = toyota.products.build(name: "Yaris", price: 9000, model: "SE")
 	# then yaris.save
 	# important command --- build
 
 	# lc = toyota.products.create(name: "Land Cruiser", price: 19000, model: "SUV")
+
+
+	# belongs_to --- association methods
+	# honda = Manufacturer.find 2
+	# city.manufacturer = honda
+	# city.model = "SE"
+	# city.save
+
+
+
+	# always run in this manner for creating associated record or from child records
+	# sonata = Product.new(name: "Sonata", price: 9000, model: "QR")
+	# hyundai = sonata.build_manufacturer(name: "Hyundai")
+	# sonata.save
+
 
 
 
