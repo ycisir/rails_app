@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_22_100626) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_23_090159) do
   create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "distributions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "manufacturer_id"
+    t.integer "reseller_id"
+    t.integer "product_id"
+    t.integer "units_sold"
+    t.decimal "unit_price", precision: 10
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "manufacturers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
