@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  add_line1: MyString
+  add_line2: MyString
+  zipcode: MyString
+
+two:
+  add_line1: MyString
+  add_line2: MyString
+  zipcode: MyString

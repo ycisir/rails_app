@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_23_090159) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_24_062332) do
+  create_table "addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "add_line1"
+    t.string "add_line2"
+    t.string "city"
+    t.string "zipcode"
+    t.integer "addressable_id"
+    t.string "addressable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
   end

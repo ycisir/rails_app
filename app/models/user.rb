@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	attr_accessor :first_name, :last_name
+	has_one :address, as: :addressable
 
 	# CITIES = %W/Nagpur Mumbai Hyderabad Delhi Jammu Bangalore Chennai Pune/
 
@@ -225,6 +226,20 @@ class User < ApplicationRecord
 
 
 
+
+
+
+	# polymorphic associations
+	# 1 model with N number of models
+
+	# User have an address
+	# distribution have an address
+	# manufacturer have an address
+	# reseller have an address
+
+	# for creating address for user we use 
+	# u1 = User.first 
+	# u1.create_address(add_line1: "User1 address1", add_line2: "User1 address2", city: "Nagpur", zipcode: 440002)
 
 
 

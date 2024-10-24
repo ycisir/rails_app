@@ -11,4 +11,5 @@ class Manufacturer < ApplicationRecord
 	# toyota sells 100 units of Camry to Reseller4 at price 21000 each to which location
 	has_many :distributions
 	has_many :resellers, through: :distributions
+	has_many :addresses, as: :addressable
 end
